@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://motamessenger.com/sitemap.xml
+
+# Disallow sensitive paths (none needed for static site, but included for safety)
+Disallow: /admin/
+Disallow: /cgi-bin/
