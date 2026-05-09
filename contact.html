@@ -44,28 +44,99 @@
 </header>
 
 <section class="py-16 bg-white">
-  <div class="container mx-auto px-4 max-w-2xl text-center">
-    <h1 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h1>
-    
-    <p class="text-gray-600 mb-8">
-      Have questions, feedback, or need help? We’re here for you.
-    </p>
-
-    <div class="bg-gray-50 p-6 rounded-xl mb-8">
-      <p class="font-medium">📧 Email Support</p>
-      <p class="mt-2 text-whatsappGreen">support@motamessenger.com</p>
+  <div class="container mx-auto px-4 max-w-2xl">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h1>
+      <p class="text-gray-600">Have questions, feedback, or need help? We’re here for you.</p>
     </div>
 
-    <div class="bg-gray-50 p-6 rounded-xl mb-8">
-      <p class="font-medium">📍 Based in India</p>
-      <p class="mt-2 text-gray-600">Serving users worldwide</p>
+    <!-- Contact info chips -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+      <div class="flex-1 bg-gray-50 p-5 rounded-xl text-center">
+        <p class="font-medium text-gray-800">📧 Email</p>
+        <p class="mt-1 text-whatsappGreen text-sm">support@motamessenger.com</p>
+      </div>
+      <div class="flex-1 bg-gray-50 p-5 rounded-xl text-center">
+        <p class="font-medium text-gray-800">📍 Based in India</p>
+        <p class="mt-1 text-gray-500 text-sm">Serving users worldwide</p>
+      </div>
     </div>
 
-    <p class="text-sm text-gray-500 mt-10">
-      Note: We do not offer phone support. Please email us for fastest response.
-    </p>
+    <!-- Contact form (Formspree) -->
+    <!-- To activate: create a free account at formspree.io, create a form, and replace YOUR_FORM_ID below -->
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-gray-50 p-8 rounded-2xl border border-gray-200 space-y-5">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Rahul Sharma"
+          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-whatsappGreen focus:border-transparent text-sm" />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com"
+          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-whatsappGreen focus:border-transparent text-sm" />
+      </div>
+      <div>
+        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+        <select id="subject" name="subject"
+          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-whatsappGreen focus:border-transparent text-sm bg-white">
+          <option value="">Select a topic...</option>
+          <option value="support">Technical Support</option>
+          <option value="feedback">Feedback</option>
+          <option value="ios-waitlist">iOS Waitlist</option>
+          <option value="privacy">Privacy / Data</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea id="message" name="message" required rows="5" placeholder="Tell us how we can help..."
+          class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-whatsappGreen focus:border-transparent text-sm resize-none"></textarea>
+      </div>
+      <button type="submit" id="submit-btn"
+        class="w-full py-3 bg-whatsappGreen text-white font-semibold rounded-xl hover:bg-whatsappGreenLight transition-all shadow-md">
+        Send Message
+      </button>
+      <div id="form-msg" class="hidden text-sm text-center py-2 px-4 rounded-lg"></div>
+    </form>
+
+    <p class="text-xs text-gray-400 text-center mt-6">We respond within 1–2 business days. No phone support.</p>
   </div>
 </section>
+
+<script>
+  var form = document.getElementById(‘contact-form’);
+  var btn = document.getElementById(‘submit-btn’);
+  var msg = document.getElementById(‘form-msg’);
+
+  form.addEventListener(‘submit’, function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = ‘Sending...’;
+
+    fetch(form.action, {
+      method: ‘POST’,
+      body: new FormData(form),
+      headers: { ‘Accept’: ‘application/json’ }
+    }).then(function(res) {
+      if (res.ok) {
+        form.reset();
+        msg.textContent = ‘✅ Message sent! We\’ll get back to you soon.’;
+        msg.className = ‘text-sm text-center py-2 px-4 rounded-lg bg-green-50 text-green-700’;
+        btn.textContent = ‘Send Message’;
+        btn.disabled = false;
+      } else {
+        throw new Error(‘server error’);
+      }
+    }).catch(function() {
+      msg.textContent = ‘❌ Something went wrong. Please email us directly at support@motamessenger.com’;
+      msg.className = ‘text-sm text-center py-2 px-4 rounded-lg bg-red-50 text-red-700’;
+      btn.textContent = ‘Send Message’;
+      btn.disabled = false;
+    });
+
+    msg.classList.remove(‘hidden’);
+  });
+</script>
 
 <footer class="bg-gray-800 text-gray-400 py-10">
   <div class="container mx-auto px-4 text-center">

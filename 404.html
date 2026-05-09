@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found – MotaBhai Messenger</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            whatsappGreen: '#075E54',
+            whatsappGreenLight: '#128C7E',
+            whatsappTeal: '#25D366'
+          }
+        }
+      }
+    }
+  </script>
+  <style>body { font-family: 'Inter', sans-serif; background-color: #f0f2f5; }</style>
+</head>
+<body class="text-gray-800 min-h-screen flex flex-col">
+
+<header class="bg-whatsappGreen text-white shadow-md">
+  <div class="container mx-auto px-4 py-3 flex items-center space-x-3">
+    <div class="w-10 h-10 rounded-full bg-whatsappTeal flex items-center justify-center flex-shrink-0">
+      <span class="text-white font-bold text-lg">M</span>
+    </div>
+    <a href="index.html" class="text-xl font-bold">MotaBhai Messenger</a>
+  </div>
+</header>
+
+<main class="flex-1 flex items-center justify-center py-20 px-4">
+  <div class="text-center max-w-md">
+    <div class="w-24 h-24 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-whatsappGreen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <h1 class="text-6xl font-bold text-whatsappGreen mb-3">404</h1>
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Page Not Found</h2>
+    <p class="text-gray-500 mb-10">
+      Looks like this message got lost. The page you're looking for doesn't exist or has been moved.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="index.html"
+        class="px-6 py-3 bg-whatsappGreen text-white font-semibold rounded-xl hover:bg-whatsappGreenLight transition-all shadow-md">
+        Go to Home
+      </a>
+      <a href="download.html"
+        class="px-6 py-3 bg-white text-whatsappGreen font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all shadow-sm">
+        Download App
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
+  <p>
+    <a href="index.html" class="hover:text-white underline">Home</a> •
+    <a href="contact.html" class="hover:text-white underline">Contact</a> •
+    <a href="privacy.html" class="hover:text-white underline">Privacy</a>
+  </p>
+  <p class="mt-3 text-xs opacity-60">© 2026 MotaBhai Messenger</p>
+</footer>
+
+</body>
+</html>

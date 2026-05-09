@@ -6,6 +6,17 @@
   <title>MotaBhai Messenger – Simple. Secure. Connected.</title>
   <meta name="description" content="A fast, private, and joyful messaging app built for India and the world. Chat, call, share status — all with end-to-end encryption." />
 
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://motamessenger.com/" />
+  <meta property="og:title" content="MotaBhai Messenger – Simple. Secure. Connected." />
+  <meta property="og:description" content="A fast, private, and joyful messaging app built for India and the world. Chat, call, share status — all with end-to-end encryption." />
+  <meta property="og:image" content="https://motamessenger.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MotaBhai Messenger – Simple. Secure. Connected." />
+  <meta name="twitter:description" content="A fast, private, and joyful messaging app built for India and the world." />
+  <meta name="twitter:image" content="https://motamessenger.com/og-image.png" />
+
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
@@ -14,20 +25,6 @@
 
   <!-- Google Fonts: Inter (clean, modern) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script>
-  (function () {
-    if (!window.location.hash) return;
-
-    const params = new URLSearchParams(window.location.hash.substring(1));
-    if (params.get('type') !== 'recovery') return;
-
-    // Redirect internally to reset page with hash preserved
-    window.location.replace(
-      '/reset-password.html' + window.location.hash
-    );
-  })();
-</script>
-
   <!-- Tailwind Config -->
   <script>
     tailwind.config = {
@@ -107,6 +104,13 @@
         m.classList.add('hidden');
       }
     }
+    document.getElementById('mobile-menu').querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var m = document.getElementById('mobile-menu');
+        m.classList.remove('flex');
+        m.classList.add('hidden');
+      });
+    });
   </script>
 
   <!-- Hero Section -->
