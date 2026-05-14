@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.motamessenger.chatapp",
+    "sha256_cert_fingerprints": [
+      "F8:CE:68:77:F0:86:00:BC:AC:EE:25:11:09:C1:47:88:FB:50:2F:81:F7:CF:36:EA:07:0C:5F:EF:FE:46:39:88"
+    ]
+  }
+}]
