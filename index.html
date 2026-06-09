@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MotaBhai Messenger – Simple. Secure. Connected.</title>
-  <meta name="description" content="A fast, joyful messaging app built for India and the world. Chat, call, and share status — stay connected with the people who matter most." />
+  <meta name="description" content="MotaBhai Messenger is a fast, joyful messaging app built for India and the world. Chat, call, share status updates and stay connected with the people who matter most. Free to download." />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://motamessenger.com/" />
+  <meta property="og:url" content="https://www.motamessenger.com/" />
   <meta property="og:title" content="MotaBhai Messenger – Simple. Secure. Connected." />
-  <meta property="og:description" content="A fast, joyful messaging app built for India and the world. Chat, call, and share status — stay connected with the people who matter most." />
-  <meta property="og:image" content="https://motamessenger.com/og-image.png" />
+  <meta property="og:description" content="MotaBhai Messenger is a fast, joyful messaging app built for India and the world. Chat, call, share status updates and stay connected with the people who matter most. Free to download." />
+  <meta property="og:image" content="https://www.motamessenger.com/og-image.png" />
   <meta property="og:site_name" content="MotaBhai Messenger" />
   <meta property="og:locale" content="en_IN" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MotaBhai Messenger – Simple. Secure. Connected." />
   <meta name="twitter:description" content="A fast, joyful messaging app built for India and the world. Chat, call, and share status." />
-  <meta name="twitter:image" content="https://motamessenger.com/og-image.png" />
+  <meta name="twitter:image" content="https://www.motamessenger.com/og-image.png" />
 
   <!-- Canonical & Crawl -->
-  <link rel="canonical" href="https://motamessenger.com/" />
+  <link rel="canonical" href="https://www.motamessenger.com/" />
   <meta name="robots" content="index, follow" />
 
   <!-- Favicon & Icons -->
@@ -35,7 +35,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts: Inter (Async Load) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLHV8ZP8HD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WLHV8ZP8HD');</script>
   
   <!-- Tailwind Config -->
   <script>
@@ -72,10 +79,10 @@
     "@graph": [
       {
         "@type": "MobileApplication",
-        "@id": "https://motamessenger.com/#app",
+        "@id": "https://www.motamessenger.com/#app",
         "name": "MotaBhai Messenger",
-        "description": "A fast, joyful messaging app built for India and the world. Chat, call, and share status — stay connected with the people who matter most.",
-        "url": "https://motamessenger.com/",
+        "description": "MotaBhai Messenger is a fast, joyful messaging app built for India and the world. Chat, call, share status updates and stay connected with the people who matter most.",
+        "url": "https://www.motamessenger.com/",
         "operatingSystem": "Android",
         "applicationCategory": "CommunicationApplication",
         "downloadUrl": "https://play.google.com/store/apps/details?id=com.motamessenger.chat",
@@ -84,29 +91,29 @@
           "price": "0",
           "priceCurrency": "INR"
         },
-        "screenshot": "https://motamessenger.com/og-image.png"
+        "screenshot": "https://www.motamessenger.com/og-image.png"
       },
       {
         "@type": "Organization",
-        "@id": "https://motamessenger.com/#organization",
+        "@id": "https://www.motamessenger.com/#organization",
         "name": "MotaBhai Messenger",
-        "url": "https://motamessenger.com/",
+        "url": "https://www.motamessenger.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://motamessenger.com/og-image.png"
+          "url": "https://www.motamessenger.com/og-image.png"
         },
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "customer support",
-          "url": "https://motamessenger.com/contact.html"
+          "url": "https://www.motamessenger.com/contact.html"
         }
       },
       {
         "@type": "WebSite",
-        "@id": "https://motamessenger.com/#website",
+        "@id": "https://www.motamessenger.com/#website",
         "name": "MotaBhai Messenger",
-        "url": "https://motamessenger.com/",
-        "publisher": { "@id": "https://motamessenger.com/#organization" }
+        "url": "https://www.motamessenger.com/",
+        "publisher": { "@id": "https://www.motamessenger.com/#organization" }
       }
     ]
   }
@@ -140,7 +147,10 @@
   <header class="bg-whatsappGreen text-white sticky top-0 z-50 shadow-lg">
     <div class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
       <a href="#" class="logo-link" aria-label="MotaBhai Messenger Home">
-        <img src="/img/motabhai.png" alt="MotaBhai Messenger logo" class="w-12 h-12 rounded-full object-cover" />
+        <picture>
+          <source srcset="/img/motabhai-header.webp" type="image/webp" />
+          <img src="/img/motabhai-header.png" alt="MotaBhai Messenger logo" class="w-12 h-12 rounded-full object-cover" width="48" height="48" fetchpriority="high" />
+        </picture>
         <span class="text-2xl font-bold tracking-tight">MotaBhai Messenger</span>
       </a>
       
@@ -213,7 +223,6 @@
                 <span aria-label="Battery level">🔋</span>
               </div>
             </div>
-            
             <!-- Chats list -->
             <div class="flex-1 bg-white p-3 space-y-3">
               <div class="flex items-center space-x-3">
@@ -225,7 +234,6 @@
                   <div class="text-xs text-gray-500">Hey, kaisa hai?</div>
                 </div>
               </div>
-              
               <div class="flex items-center space-x-3">
                 <div class="status-bubble">
                   <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold" aria-label="Priya's avatar">P</div>
@@ -235,7 +243,6 @@
                   <div class="text-xs text-gray-500">New status!</div>
                 </div>
               </div>
-              
               <div class="flex items-center space-x-3">
                 <div class="status-bubble">
                   <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white font-bold" aria-label="Family Group avatar">G</div>
@@ -246,7 +253,6 @@
                 </div>
               </div>
             </div>
-            
             <!-- Bottom nav -->
             <div class="bg-gray-100 flex justify-around py-2" aria-label="App navigation">
               <span aria-label="Messages">💬</span>
@@ -254,7 +260,6 @@
               <span aria-label="Calls">📞</span>
             </div>
           </div>
-          
           <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-whatsappTeal rounded-full opacity-20 animate-float" aria-hidden="true"></div>
         </div>
       </div>
@@ -454,7 +459,10 @@
       <div class="flex flex-col md:flex-row justify-between gap-8">
         <div class="max-w-md">
           <a href="#" class="logo-link mb-4" aria-label="MotaBhai Messenger Home">
-            <img src="/img/motabhai.png" alt="MotaBhai Messenger logo" class="w-10 h-10 rounded-full object-cover" />
+            <picture>
+              <source srcset="/img/motabhai-header.webp" type="image/webp" />
+              <img src="/img/motabhai-header.png" alt="MotaBhai Messenger logo" class="w-10 h-10 rounded-full object-cover" width="40" height="40" />
+            </picture>
             <span class="text-white text-xl font-bold">MotaBhai Messenger</span>
           </a>
           <p class="mb-6">

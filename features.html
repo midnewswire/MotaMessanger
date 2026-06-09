@@ -8,19 +8,19 @@
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://motamessenger.com/features.html" />
+  <meta property="og:url" content="https://www.motamessenger.com/features.html" />
   <meta property="og:title" content="Features – MotaBhai Messenger" />
   <meta property="og:description" content="Discover all features of MotaBhai Messenger: secure messaging, group management, status, calls, backup, and more." />
-  <meta property="og:image" content="https://motamessenger.com/og-image.png" />
+  <meta property="og:image" content="https://www.motamessenger.com/og-image.png" />
   <meta property="og:site_name" content="MotaBhai Messenger" />
   <meta property="og:locale" content="en_IN" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Features – MotaBhai Messenger" />
   <meta name="twitter:description" content="Discover all features of MotaBhai Messenger: secure messaging, group management, status, calls, backup, and more." />
-  <meta name="twitter:image" content="https://motamessenger.com/og-image.png" />
+  <meta name="twitter:image" content="https://www.motamessenger.com/og-image.png" />
 
   <!-- Canonical & Crawl -->
-  <link rel="canonical" href="https://motamessenger.com/features.html" />
+  <link rel="canonical" href="https://www.motamessenger.com/features.html" />
   <meta name="robots" content="index, follow" />
 
   <!-- Favicon & Icons -->
@@ -28,7 +28,14 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#075E54" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLHV8ZP8HD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WLHV8ZP8HD');</script>
   <script>
     tailwind.config = {
       theme: {
@@ -50,17 +57,17 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://motamessenger.com/features.html",
-        "url": "https://motamessenger.com/features.html",
+        "@id": "https://www.motamessenger.com/features.html",
+        "url": "https://www.motamessenger.com/features.html",
         "name": "Features – MotaBhai Messenger",
         "description": "Discover all features of MotaBhai Messenger: secure messaging, group management, status, calls, backup, and more.",
-        "isPartOf": { "@id": "https://motamessenger.com/#website" }
+        "isPartOf": { "@id": "https://www.motamessenger.com/#website" }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motamessenger.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://motamessenger.com/features.html" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.motamessenger.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://www.motamessenger.com/features.html" }
         ]
       }
     ]
@@ -75,7 +82,7 @@
 <header class="bg-whatsappGreen text-white sticky top-0 z-50 shadow-md">
   <div class="container mx-auto px-4 py-3 flex items-center justify-between">
     <div class="flex items-center space-x-2">
-      <img src="/img/motabhai.png" alt="MotaBhai Messenger logo" class="w-10 h-10 rounded-full object-cover" />
+      <picture><source srcset="/img/motabhai-header.webp" type="image/webp" /><img src="/img/motabhai-header.png" alt="MotaBhai Messenger logo" class="w-10 h-10 rounded-full object-cover" width="40" height="40" /></picture>
       <span class="text-xl font-bold">MotaBhai Messenger</span>
     </div>
     <nav class="hidden md:flex space-x-5 text-sm">
