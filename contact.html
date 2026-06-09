@@ -84,6 +84,20 @@
       <a href="terms.html" class="hover:text-whatsappTeal transition">Terms</a>
       <a href="contact.html" class="font-medium">Contact</a>
     </nav>
+    <button id="menu-toggle" class="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-white" aria-label="Toggle navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-whatsappGreenLight px-4 pb-4" style="display:none">
+    <nav class="flex flex-col space-y-3 text-sm pt-3">
+      <a href="index.html" class="hover:text-whatsappTeal transition">Home</a>
+      <a href="features.html" class="hover:text-whatsappTeal transition">Features</a>
+      <a href="privacy.html" class="hover:text-whatsappTeal transition">Privacy</a>
+      <a href="terms.html" class="hover:text-whatsappTeal transition">Terms</a>
+      <a href="contact.html" class="font-medium">Contact</a>
+    </nav>
   </div>
 </header>
 
@@ -197,6 +211,12 @@
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      var m = document.getElementById('mobile-menu');
+      m.style.display = m.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
 
 </body>
 </html>

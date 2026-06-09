@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy – MotaBhai Messenger</title>
-  <meta name="description" content="Read the MotaBhai Messenger Privacy Policy. Learn how we protect your data with end-to-end encryption and a strict no-tracking policy." />
+  <meta name="description" content="Read the MotaBhai Messenger Privacy Policy. Learn what data we collect, how we use it, and your rights as a user." />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://motamessenger.com/privacy.html" />
   <meta property="og:title" content="Privacy Policy – MotaBhai Messenger" />
-  <meta property="og:description" content="Read the MotaBhai Messenger Privacy Policy. Learn how we protect your data with end-to-end encryption and a strict no-tracking policy." />
+  <meta property="og:description" content="Read the MotaBhai Messenger Privacy Policy. Learn what data we collect, how we use it, and your rights as a user." />
   <meta property="og:image" content="https://motamessenger.com/og-image.png" />
   <meta property="og:site_name" content="MotaBhai Messenger" />
   <meta property="og:locale" content="en_IN" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Privacy Policy – MotaBhai Messenger" />
-  <meta name="twitter:description" content="Read the MotaBhai Messenger Privacy Policy. Learn how we protect your data with end-to-end encryption and a strict no-tracking policy." />
+  <meta name="twitter:description" content="Read the MotaBhai Messenger Privacy Policy. Learn what data we collect, how we use it, and your rights as a user." />
   <meta name="twitter:image" content="https://motamessenger.com/og-image.png" />
 
   <!-- Canonical & Crawl -->
@@ -81,6 +81,18 @@
       <a href="index.html" class="hover:text-whatsappTeal transition">Home</a>
       <a href="features.html" class="hover:text-whatsappTeal transition">Features</a>
       <a href="privacy.html" class="font-medium">Privacy</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-white" aria-label="Toggle navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-whatsappGreenLight px-4 pb-4" style="display:none">
+    <nav class="flex flex-col space-y-3 text-sm pt-3">
+      <a href="index.html" class="hover:text-whatsappTeal transition">Home</a>
+      <a href="features.html" class="hover:text-whatsappTeal transition">Features</a>
+      <a href="privacy.html" class="font-medium">Privacy</a>
       <a href="terms.html" class="hover:text-whatsappTeal transition">Terms</a>
       <a href="contact.html" class="hover:text-whatsappTeal transition">Contact</a>
     </nav>
@@ -102,12 +114,12 @@
       <li>Your mobile phone number (for account verification)</li>
       <li>Profile name and optional profile picture</li>
       <li>Contacts from your address book (only to show which contacts use MotaBhai)</li>
-      <li>Encrypted message content (never readable by us)</li>
+      <li>Message content (transmitted to deliver your messages, not stored on our servers)</li>
     </ul>
 
     <h2 class="text-xl font-bold mt-8 mb-4">What We Do NOT Collect</h2>
     <ul class="list-disc pl-5 mb-6 space-y-2">
-      <li>Message content (end-to-end encrypted)</li>
+      <li>Message content (not retained on our servers after delivery)</li>
       <li>Call audio or video</li>
       <li>Location data</li>
       <li>Metadata about who you message or when</li>
@@ -150,6 +162,12 @@
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      var m = document.getElementById('mobile-menu');
+      m.style.display = m.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
 
 </body>
 </html>
