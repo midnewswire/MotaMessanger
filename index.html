@@ -12,13 +12,21 @@
   <meta property="og:title" content="MotaBhai Messenger – Simple. Secure. Connected." />
   <meta property="og:description" content="A fast, private, and joyful messaging app built for India and the world. Chat, call, share status — all with end-to-end encryption." />
   <meta property="og:image" content="https://motamessenger.com/og-image.png" />
+  <meta property="og:site_name" content="MotaBhai Messenger" />
+  <meta property="og:locale" content="en_IN" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MotaBhai Messenger – Simple. Secure. Connected." />
   <meta name="twitter:description" content="A fast, private, and joyful messaging app built for India and the world." />
   <meta name="twitter:image" content="https://motamessenger.com/og-image.png" />
 
-  <!-- Favicon -->
+  <!-- Canonical & Crawl -->
+  <link rel="canonical" href="https://motamessenger.com/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon & Icons -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#075E54" />
 
   <!-- Vercel Speed Insights (High Priority) -->
   <script defer src="/_vercel/speed-insights/script.js"></script>
@@ -55,6 +63,53 @@
         }
       }
     }
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MobileApplication",
+        "@id": "https://motamessenger.com/#app",
+        "name": "MotaBhai Messenger",
+        "description": "A fast, private, and joyful messaging app built for India and the world. Chat, call, share status — all with end-to-end encryption.",
+        "url": "https://motamessenger.com/",
+        "operatingSystem": "Android",
+        "applicationCategory": "CommunicationApplication",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.motamessenger.chat",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "screenshot": "https://motamessenger.com/og-image.png"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://motamessenger.com/#organization",
+        "name": "MotaBhai Messenger",
+        "url": "https://motamessenger.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://motamessenger.com/og-image.png"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "url": "https://motamessenger.com/contact.html"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://motamessenger.com/#website",
+        "name": "MotaBhai Messenger",
+        "url": "https://motamessenger.com/",
+        "publisher": { "@id": "https://motamessenger.com/#organization" }
+      }
+    ]
+  }
   </script>
 
   <style>

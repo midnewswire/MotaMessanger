@@ -5,10 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Download – MotaBhai Messenger</title>
   <meta name="description" content="Download MotaBhai Messenger for Android. Free, private, and secure messaging app with end-to-end encryption." />
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://motamessenger.com/download.html" />
   <meta property="og:title" content="Download MotaBhai Messenger" />
   <meta property="og:description" content="Free, private, and secure messaging app with end-to-end encryption. No ads, no trackers." />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://motamessenger.com/og-image.png" />
+  <meta property="og:site_name" content="MotaBhai Messenger" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Download MotaBhai Messenger" />
+  <meta name="twitter:description" content="Free, private, and secure messaging app with end-to-end encryption. No ads, no trackers." />
+  <meta name="twitter:image" content="https://motamessenger.com/og-image.png" />
+
+  <!-- Canonical & Crawl -->
+  <link rel="canonical" href="https://motamessenger.com/download.html" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon & Icons -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#075E54" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script>
@@ -25,6 +42,37 @@
       }
     }
   </script>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MobileApplication",
+        "@id": "https://motamessenger.com/#app",
+        "name": "MotaBhai Messenger",
+        "description": "Download MotaBhai Messenger for Android. Free, private, and secure messaging app with end-to-end encryption.",
+        "url": "https://motamessenger.com/download.html",
+        "operatingSystem": "Android",
+        "applicationCategory": "CommunicationApplication",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.motamessenger.chat",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motamessenger.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Download", "item": "https://motamessenger.com/download.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     body { font-family: 'Inter', sans-serif; background-color: #f0f2f5; }
     .feature-icon { background: linear-gradient(135deg, #075E54, #25D366); }
