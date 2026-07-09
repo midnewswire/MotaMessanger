@@ -1,9 +1,9 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path((?!\\.well-known/).*)",
       "has": [{ "type": "host", "value": "motamessenger.com" }],
-      "destination": "https://www.motamessenger.com/$1",
+      "destination": "https://www.motamessenger.com/:path",
       "permanent": true
     }
   ],
