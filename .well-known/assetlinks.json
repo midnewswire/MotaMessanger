@@ -1,13 +1,15 @@
 [
   {
     "relation": [
-      "delegate_permission/common.handle_all_urls"
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
     ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.motamessenger.chat",
       "sha256_cert_fingerprints": [
-        "F8:CE:68:77:F0:86:00:BC:AC:EE:25:11:09:C1:47:88:FB:50:2F:81:F7:CF:36:EA:07:0C:5F:EF:FE:46:39:88"
+        "F8:CE:68:77:F0:86:00:BC:AC:EE:25:11:09:C1:47:88:FB:50:2F:81:F7:CF:36:EA:07:0C:5F:EF:FE:46:39:88",
+        "E3:C1:98:61:00:92:8B:A8:C6:D8:56:79:A8:03:BD:C4:A9:C0:67:B9:0B:C0:BB:9C:33:BB:32:DD:53:63:2C:74"
       ]
     }
   },
