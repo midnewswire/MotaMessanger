@@ -7,6 +7,12 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/invite/:code",
+      "destination": "/invite.html"
+    }
+  ],
   "headers": [
     {
       "source": "/styles.css",
