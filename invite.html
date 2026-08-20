@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group Invite – MotaBhai Messenger</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <meta name="theme-color" content="#075E54" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLHV8ZP8HD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WLHV8ZP8HD');</script>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>body { font-family: 'Inter', sans-serif; background-color: #f0f2f5; }</style>
+</head>
+<body class="text-gray-800 min-h-screen flex flex-col">
+
+<header class="bg-whatsappGreen text-white shadow-md">
+  <div class="container mx-auto px-4 py-3 flex items-center space-x-3">
+    <picture>
+      <source srcset="/img/motabhai-header.webp" type="image/webp" />
+      <img src="/img/motabhai-header.png" alt="MotaBhai Messenger logo" class="w-10 h-10 rounded-full object-cover flex-shrink-0" width="40" height="40" />
+    </picture>
+    <a href="/index.html" class="text-xl font-bold">MotaBhai Messenger</a>
+  </div>
+</header>
+
+<main class="flex-1 flex items-center justify-center py-20 px-4">
+  <div class="text-center max-w-md w-full">
+
+    <!-- Loading state -->
+    <div id="state-loading">
+      <div class="w-24 h-24 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-8 animate-pulse">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-whatsappGreen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4" />
+        </svg>
+      </div>
+      <p class="text-gray-500">Loading invite…</p>
+    </div>
+
+    <!-- Found state -->
+    <div id="state-found" class="hidden">
+      <div class="w-24 h-24 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-6 overflow-hidden">
+        <img id="group-avatar-img" src="" alt="" class="hidden w-24 h-24 object-cover" />
+        <svg id="group-avatar-fallback" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-whatsappGreen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4" />
+        </svg>
+      </div>
+      <p class="text-gray-500 mb-1">You're invited to join</p>
+      <h1 id="group-name" class="text-2xl font-bold text-gray-900 mb-2">Group</h1>
+      <p id="group-members" class="text-gray-500 mb-10"></p>
+      <div class="flex flex-col gap-3 justify-center">
+        <a id="open-app-link" href="#"
+          class="inline-flex items-center justify-center w-full px-6 py-3.5 bg-whatsappGreen text-white font-semibold rounded-xl hover:bg-whatsappGreenLight transition-all shadow-md hover:shadow-lg"
+          aria-label="Open in MotaBhai Messenger app">
+          Open in App
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.motamessenger.chat"
+          target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center justify-center w-full px-6 py-3 bg-gray-800 text-white font-semibold rounded-xl hover:bg-gray-900 transition-all shadow-md hover:shadow-lg"
+          aria-label="Get MotaBhai Messenger on Google Play">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 20.5v-17c0-.83 1-.83 1.5-.5L20 12 4.5 21c-.5.33-1.5.33-1.5-.5z"/>
+          </svg>
+          Get it on Google Play
+        </a>
+      </div>
+      <p class="mt-6 text-xs text-gray-400">Don't have the app yet? Install it, then open this link again to join.</p>
+    </div>
+
+    <!-- Not-found / expired state -->
+    <div id="state-invalid" class="hidden">
+      <div class="w-24 h-24 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-whatsappGreen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h1 class="text-2xl font-semibold text-gray-800 mb-4">Invite link invalid or expired</h1>
+      <p class="text-gray-500 mb-10">
+        This group invite link doesn't work anymore. Ask the person who shared it for a new one.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/index.html"
+          class="px-6 py-3 bg-whatsappGreen text-white font-semibold rounded-xl hover:bg-whatsappGreenLight transition-all shadow-md">
+          Go to Home
+        </a>
+        <a href="/download.html"
+          class="px-6 py-3 bg-white text-whatsappGreen font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all shadow-sm">
+          Download App
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
+  <p>
+    <a href="/index.html" class="hover:text-white underline">Home</a> •
+    <a href="/contact.html" class="hover:text-white underline">Contact</a> •
+    <a href="/privacy.html" class="hover:text-white underline">Privacy</a>
+  </p>
+  <p class="mt-3 text-xs opacity-60">© 2026 MotaBhai Messenger</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  (function () {
+    var SUPABASE_URL = 'https://uiqkawnkputtdovffnyo.supabase.co';
+    var SUPABASE_ANON_KEY = 'sb_publishable_aliMT5Q_VyW6yX7-0VvBxw_yPwkf3GU';
+
+    function showState(id) {
+      ['state-loading', 'state-found', 'state-invalid'].forEach(function (s) {
+        document.getElementById(s).classList.toggle('hidden', s !== id);
+      });
+    }
+
+    // Path is /invite/<code> (see vercel.json rewrite)
+    var segments = window.location.pathname.split('/').filter(Boolean);
+    var code = segments.length >= 2 && segments[0] === 'invite' ? segments[1] : null;
+
+    if (!code) {
+      showState('state-invalid');
+    } else {
+      document.getElementById('open-app-link').href = 'motamessenger://invite/' + encodeURIComponent(code);
+
+      var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      client.rpc('get_invite_preview', { code: code }).then(function (res) {
+        var row = res.data && res.data[0];
+        if (res.error || !row) {
+          showState('state-invalid');
+          return;
+        }
+        document.getElementById('group-name').textContent = row.chat_name || 'Group';
+        var count = row.member_count || 0;
+        document.getElementById('group-members').textContent =
+          count + ' member' + (count === 1 ? '' : 's');
+
+        if (row.group_avatar) {
+          var img = document.getElementById('group-avatar-img');
+          img.src = row.group_avatar;
+          img.classList.remove('hidden');
+          document.getElementById('group-avatar-fallback').classList.add('hidden');
+        }
+
+        showState('state-found');
+        // Give the OS a moment to hand off to the app if it's installed
+        // (Android App Links normally intercept before this page ever
+        // loads, but this covers unverified installs / manual taps).
+        window.location.href = document.getElementById('open-app-link').href;
+      }).catch(function () {
+        showState('state-invalid');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
